@@ -2,237 +2,268 @@
 ----------------------------------------------------
 TABLE OF CONTENTS                                   |
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                  |
-HEADER -                                            |
-MAIN -                                              |
-FOOTER -                                            |
+HEADER - Title/Name, navigation                     |
+HERO - background image, subtitle                   |
+MAIN -   About Me, Work, Contact Me sections        |
+FOOTER -  no footer                                 |
 ----------------------------------------------------
 */
-/* declared variables */
+/*
+AUTHOR'S NOTES
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+-All CSS properties are in alphabetical order
+-All units are relative where possible, exceptions are explained
+-This stylesheet is intended to be used in conjunction with a reset.css
+*/
+
+/* declared variables and color palette */
 :root {
-  --teal: #92cccd;
   --dark: #31343d;
-  --light: #ededf6;
+  --lite: #ededf6;
+  --teal: #92cccd;
   --text: #445876;
 }
+
 /* Universal Selector */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
+
 /* Element Selectors */
 body {
-  background-color: var(--light);
+  background-color: var(--lite);
   color: var(--text);
 }
+
 /* ------HEADER------ */
 header {
+  background-color: var(--dark);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background-color: var(--dark);
+  justify-content: space-between;
   margin: 0 auto;
   white-space: nowrap;
 }
 
 header h1 {
+  background-color: var(--teal);
+  color: var(--dark);
   display: inline-block;
   font-size: 3rem;
-  color: var(--dark);
-  background-color: var(--teal);
-  padding: 0.5rem 0.75rem 0.5rem 4rem;
   margin: 0.75rem 0.75rem 0.75rem 0rem;
+  padding: 0.5rem 0.75rem 0.5rem 4rem;
 }
 
+/* Navigation */
 header nav {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.5rem;
-  width: 40%;
   padding-right: 4rem;
+  width: 40%;
 }
+
 header nav ul {
+  align-items: center;
   display: flex;
   flex-direction: row;
+  height: 100%;
   justify-content: flex-end;
   list-style: none;
   margin: 0;
   padding: 0;
-  align-items: center;
-  height: 100%;
   text-align: center;
 }
 
 header nav ul li {
   padding: 0.5rem;
 }
+
 header nav a {
-  color: var(--teal);
   border-bottom: 0.25rem solid var(--teal);
+  color: var(--teal);
   text-decoration: none;
 }
-/* ------MAIN------ */
-.card {
-  padding: 3rem 2rem 0rem 0rem;
-  display: flex;
-}
 
-.card img {
-  max-height: 200px;
-  display: inline;
-  padding-left: 2%;
-}
-
-.card h2 {
-  font-size: 2.5rem;
-  text-align: right;
-  padding-right: 1rem;
-  min-width: 12rem;
-  border-right: 0.25rem solid var(--text);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-
-}
-
-.card p {
-  padding-left: 2%;
-  font-size: 1.2rem;
-  margin: 0 auto;
-}
-
-.card a {
-  color: var(--dark);
-  border-bottom: 0.2rem solid var(--text);
-  text-decoration: none;
-}
-.card img {
-  display:inline;
-  margin: 0 auto;
-}
-
+/* Hero image */
 #hero {
-  height: 197px;
-  width: 100%;
   background-image: url("../images/hero.jpg");
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   display: block;
+  height: 197px; /* used exact height of image instead of relative units to keep resolution consistent across screens */
+  width: 100%;
 }
 
 #hero h2 {
-  font-size: 2rem;
-  color: var(--dark);
   background-color: var(--teal);
+  color: var(--dark);
+  font-size: 2rem;
   padding: 0.5rem;
   position: absolute;
   right: 5rem;
   top: 12rem;
 }
-#aboutme p {
-  display:flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  padding-bottom: 1.5rem;
-  width:100%;
+
+/* ------MAIN------ */
+.card {
+  display: flex;
+  padding: 3rem 2rem 0rem 0rem;
 }
 
-#allwork {
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  align-content: flex-start;
-  width:100%;
-  padding:0 0 0 2rem;
+.card img {
+  display: inline;
+  max-height: 12.5rem;
+  padding-left: 2%;
 }
-.link {
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left: 0;
-  z-index: 1;
-  background-color: var(--teal);
-  opacity: 30%;
-}
-.link:hover {
-  opacity: 0%;
-}
-#contactme div {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 80%;
-  align-items: center;
-}
-#firstrow {
-  background-image: url("../images/surf.jpg");
-  background-size: cover;
-  background-position: center;
-  display: block;
-  height:24rem;
-  margin-bottom: 1rem;
-  position:relative;
-}
-#secondrow, #thirdrow {
-  display:flex;
-  margin-bottom: 1rem;
-  height: 8rem;
-  position:relative;
-}
-#led {
-  background-image: url("../images/led.jpg");
-  background-size: cover;
-  background-position: center;
-  display: block;
-  width:100%;
-  height:100%;
-  margin-right: 0.5rem;
-}
-#calc {
-  background-image: url("../images/calc.jpg");
-  background-size: cover;
-  background-position: center;
-  display: block;
-  width:100%;
-  height:100%;
-  margin-left: 0.5rem;
-}
-#puzzle {
-  background-image: url("../images/pastel.jpg");
-  background-size: cover;
-  background-position: center;
-  display: block;
-  width:100%;
-  height:100%;
-  margin-right: 0.5rem;
-}
-#buddy {
-  background-image: url("../images/run.jpg");
-  background-size: cover;
-  background-position: center;
-  display: block;
-  width:100%;
-  height:100%;
-  margin-left: 0.5rem;
-}
-.projects {
-  border: 0.25rem solid var(--teal);
-  position: relative;
+
+/* Card titles */
+.card h2 {
+  border-right: 0.25rem solid var(--text);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  font-size: 2.5rem;
+  min-width: 12rem;
+  padding-right: 1rem;
+  text-align: right;
 }
+
+.card p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding-left: 2%;
+}
+
+.card a {
+  border-bottom: 0.2rem solid var(--text);
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.card img {
+  display: inline;
+  margin: 0 auto;
+}
+
+/* About Me card */
+#aboutme p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
+
+/* Work card */
+#allwork {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 0 0 0 2rem;
+  width: 100%;
+}
+
+/* styles for all work cards */
+.projects {
+  border: 0.25rem solid var(--teal);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: relative;
+}
+
+/* styles for work card labels */
 .projects h4 {
   font-size: 0.75rem;
 }
+
 .projects h3 {
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
 }
-.lightbox{
+
+.worklabel {
   background-color: var(--teal);
-  position:absolute;
   bottom: 1rem;
-  padding:0.5rem;
+  padding: 0.5rem;
+  position: absolute;
+}
+
+/* makes the each work card a link and provides an overlay */
+.link {
+  background-color: var(--teal);
+  height: 100%;
+  left: 0;
+  opacity: 30%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.link:hover {
+  opacity: 0%;
+}
+
+/* styles first row in work section */
+#firstrow {
+  background-image: url("../images/surf.jpg");
+  background-position: center;
+  background-size: cover;
+  display: block;
+  height: 24rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* styles second and third rows in work section */
+#secondrow,
+#thirdrow {
+  display: flex;
+  height: 8rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* styles bottom four work cards */
+#led, #calc, #puzzle, #buddy {
+  background-position: center;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* applies unique image to bottom 4 work cards and adds spacing */
+#led {
+  background-image: url("../images/led.jpg");
+  margin-right: 0.5rem;
+}
+
+#calc {
+  background-image: url("../images/calc.jpg");
+  margin-left: 0.5rem;
+}
+
+#puzzle {
+  background-image: url("../images/pastel.jpg");
+  margin-right: 0.5rem;
+}
+
+#buddy {
+  background-image: url("../images/run.jpg");
+  margin-left: 0.5rem;
+}
+
+/* Contact Me section */
+#contactme div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
 }
