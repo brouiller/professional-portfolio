@@ -6,17 +6,14 @@ HEADER -                                            |
 MAIN -                                              |
 FOOTER -                                            |
 ----------------------------------------------------
-COLOR PALETTE
-#4F728D
-#442D19
-#C3DCE9
-#98C7ED
-#87ADD2
-#839DB5
-#424E53
-#442C49
 */
-
+/* declared variables */
+:root {
+  --teal: #92cccd;
+  --dark: #31343d;
+  --light: #ededf6;
+  --text: #445876;
+}
 /* Universal Selector */
 * {
   box-sizing: border-box;
@@ -25,129 +22,217 @@ COLOR PALETTE
 }
 /* Element Selectors */
 body {
-  background-color: #293f55;
-  color:#8f8f8f;
-}
-
-a {
-  color: #aa591a;
-  border-bottom: 3px solid #9D7438;
-  text-decoration: none;
-}
-a:hover {
-  color: #9D7438;
-  border-bottom: 3px solid #aa591a;
-  text-decoration: none;
+  background-color: var(--light);
+  color: var(--text);
 }
 /* ------HEADER------ */
 header {
-  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background-color: #424d53;
+  background-color: var(--dark);
+  margin: 0 auto;
+  white-space: nowrap;
 }
 
 header h1 {
   display: inline-block;
-  font-size: 48px;
-  color: #8f8f8f;
+  font-size: 3rem;
+  color: var(--dark);
+  background-color: var(--teal);
+  padding: 0.5rem 0.75rem 0.5rem 4rem;
+  margin: 0.75rem 0.75rem 0.75rem 0rem;
 }
 
 header nav {
-  width:33%;
-  float: right;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
+  width: 40%;
+  padding-right: 4rem;
 }
-header nav ul li {
-    display:inline-flex;
-    justify-content: right;
-    padding:10px;
-    flex-wrap:wrap;
-    flex-direction: column;
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
 
+header nav ul li {
+  padding: 0.5rem;
+}
+header nav a {
+  color: var(--teal);
+  border-bottom: 0.25rem solid var(--teal);
+  text-decoration: none;
 }
 /* ------MAIN------ */
-aside {
-  margin-right: 20px;
-  padding: 20px;
-  clear: both;
-  float: right;
-  width: 20%;
-  height: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-/* Class Selectors */
-.float-left {
-  float: left;
-  margin-right: 25px;
-}
-
-.float-right {
-  float: right;
-  margin-left: 25px;
-}
-
 .card {
-  padding: 2%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  display:flex;
-  border-top: 3px solid #9D7438;
-  border-bottom: 3px solid #9D7438;
-  border-radius: 15%;
-  margin:2%;
+  padding: 3rem 2rem 0rem 0rem;
+  display: flex;
 }
 
 .card img {
   max-height: 200px;
-  display:inline;
+  display: inline;
   padding-left: 2%;
 }
 
 .card h2 {
-  font-size: 36px;
-  display:block;
-  text-align: center;
-  padding-right:2%;
-  width: 20%;
-  height:100%;
-  color:#8f8f8f;
+  font-size: 2.5rem;
+  text-align: right;
+  padding-right: 1rem;
+  min-width: 12rem;
+  border-right: 0.25rem solid var(--text);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
 }
 
 .card p {
-    padding-left:2%;
-    font-size: 18px;
-    flex:auto;
-    justify-content: space-evenly;
+  padding-left: 2%;
+  font-size: 1.2rem;
+  margin: 0 auto;
 }
 
-/* ID Selectors */
-/* #content {
-  width: 75%;
-  display: inline-block;
-  margin-left: 20px;
-  font-size: 16px;
-} */
+.card a {
+  color: var(--dark);
+  border-bottom: 0.2rem solid var(--text);
+  text-decoration: none;
+}
+.card img {
+  display:inline;
+  margin: 0 auto;
+}
 
 #hero {
-  height: 300px;
+  height: 197px;
   width: 100%;
-  margin-bottom: 25px;
   background-image: url("../images/hero.jpg");
   background-size: cover;
   background-position: center;
+  display: block;
 }
 
-/* ------FOOTER------ */
-footer {
-  padding: 30px;
-  clear: both;
+#hero h2 {
+  font-size: 2rem;
+  color: var(--dark);
+  background-color: var(--teal);
+  padding: 0.5rem;
+  position: absolute;
+  right: 5rem;
+  top: 12rem;
+}
+#aboutme p {
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  padding-bottom: 1.5rem;
+  width:100%;
+}
+
+#allwork {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  width:100%;
+  padding:0 0 0 2rem;
+}
+.link {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--teal);
+  opacity: 30%;
+}
+.link:hover {
+  opacity: 0%;
+}
+#contactme div {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  align-items: center;
+}
+#firstrow {
+  background-image: url("../images/surf.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  height:24rem;
+  margin-bottom: 1rem;
+  position:relative;
+}
+#secondrow, #thirdrow {
+  display:flex;
+  margin-bottom: 1rem;
+  height: 8rem;
+  position:relative;
+}
+#led {
+  background-image: url("../images/led.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width:100%;
+  height:100%;
+  margin-right: 0.5rem;
+}
+#calc {
+  background-image: url("../images/calc.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width:100%;
+  height:100%;
+  margin-left: 0.5rem;
+}
+#puzzle {
+  background-image: url("../images/pastel.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width:100%;
+  height:100%;
+  margin-right: 0.5rem;
+}
+#buddy {
+  background-image: url("../images/run.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width:100%;
+  height:100%;
+  margin-left: 0.5rem;
+}
+.projects {
+  border: 0.25rem solid var(--teal);
+  position: relative;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  text-align: center;
 }
-
-footer h2 {
-  font-size: 20px;
+.projects h4 {
+  font-size: 0.75rem;
+}
+.projects h3 {
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+.lightbox{
+  background-color: var(--teal);
+  position:absolute;
+  bottom: 1rem;
+  padding:0.5rem;
 }
