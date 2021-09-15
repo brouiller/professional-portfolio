@@ -267,3 +267,30 @@ header nav a {
   justify-content: space-evenly;
   width: 80%;
 }
+/* changes styling to move the navigation under the title below 992 */
+@media only screen and (max-width: 992px) {
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    justify-content: flex-start;
+    padding-right: 0;
+    width: inherit;
+  }
+}
+
+/* styling changes flex boxes from rows to columns for better layout on mobile */
+@media only screen and (max-width: 600px) {
+#contactme div {
+  flex-direction: column;
+}
+
+header nav ul {
+  flex-direction: column;
+}
+
+#hero h2 {
+  position: inherit;
+}
+}
