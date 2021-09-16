@@ -5,3 +5,8 @@ This website contains a header with my name and a navigation bar. It also has an
 The animation below shows that the navigation buttons link to the sections and that an overlay disappears from the cards when the mouse hovers over them.
 
 <img src='./assets/images/professional-portfolio.gif' alt='professional portfolio animated gif' width='500' height='500' />
+
+
+## Deployed Application
+
+[Go to my professional portfolio](https://brouiller.github.io/professional-portfolio/)
