@@ -1,0 +1,56 @@
+/*
+COLOR PALETTE
+*/
+:root {
+  --imperialRed: #E63946;
+  --honeyDew: #F1FAEE;
+  --powderBlue: #A8DADC;
+  --celadonBlue: #457B9D;
+  --prussianBlue: #1D3557;
+}
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* sets default values*/
+body {
+  background-color: var(--prussianBlue);
+  color:var(--honeyDew);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.2rem;
+}
+a {
+  text-decoration: none;
+}
+header {
+    background-color: var(--imperialRed);
+}
+
+nav span {
+    background-color: var(--prussianBlue);
+}
+
+nav span:hover {
+    background-color: var(--celadonBlue);
+}
+.card {
+  color: var(--prussianBlue);
+  background-color: var(--celadonBlue);
+}
+
+main span {
+    background-color: var(--powderBlue);
+    color: var(--prussianBlue);
+}
+
+main span:hover {
+    background-color: var(--prussianBlue);
+    color: var(--honeyDew);
+}
+footer a {
+    background-color: var(--celadonBlue);
+    color: var(--prussianBlue);
+}
