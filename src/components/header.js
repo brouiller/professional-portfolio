@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MyHeader() {
+export default function Header() {
     return (
         <header className="container-fluid">
             <div className="row">
