@@ -18,7 +18,7 @@ export default function Header() {
               </a>
               <a
                 className="navbar-brand"
-                href="/Bradley-Kimbrell-Resume-2021.pdf"
+                href="https://bradleykimbrell.com/assets/img/Bradley-Kimbrell-Resume-2021.pdf"
               >
                 <span className="rounded p-3">Resume</span>
               </a>
